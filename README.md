@@ -16,6 +16,7 @@ this snippet has structure
 utility
 
 1.create controller template "type controller"
+
 2.create model template  "type model"
 
 query builder
