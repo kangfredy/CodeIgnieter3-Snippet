@@ -14,23 +14,79 @@
 	}
 */
 
+//UTILITY
 "controller":{
-"prefix": "controller",
+"prefix": "build controller",
 		"body": [
 			"<?php",
 			"defined('BASEPATH') OR exit('No direct script access allowed');",
 
-			"class namacontroller extends CI_Controller{",
-				",function __construct(){",
-					"parent::__construct();",
-				"}",
+			"	class namacontroller extends CI_Controller{",
+				"	function __construct(){",
+					"	parent::__construct();",
+				"	}",
 
-				"function index(){",
+				"	function index(){",
 					
-				"}",
+				"	}",
 
-			"}?>"
+			"	}?>"
 		],
 		"description": "make controller CI"
+},
+
+"Model":{
+"prefix": "build model",
+		"body": [
+			"<?php",
+			"	defined('BASEPATH') OR exit('No direct script access allowed');",
+
+			"	class NameOfModel extends CI_Model{",
+
+			"	}?>"
+		],
+		"description": "make model CI"
+},
+
+
+
+//QUERY BUILDER
+"insert":{
+"prefix": "insert query builder",
+		"body": [
+			"		$this->db->insert('NameOfTable',$variable);"
+		],
+		"description": "query builder insert CI"
+},
+"SelectAll":{
+"prefix": "Select * FROM query builder",
+		"body": [
+			"		$query = $this->db->get('mytable');"
+		],
+		"description": "query builder select * FROM CI"
+},
+"SelectFrom":{
+"prefix": "Select(parameter) FROM ,query builder",
+		"body": [
+			"		$this->db->select('title, content, date');",
+		    "		$this->db->from('mytable');",
+			"		$query = $this->db->get();"
+		],
+		"description": "query builder select(parameter) FROM, CI"
+},
+"join":{
+"prefix": "Join query Builder on CI",
+		"body": [
+			"		$this->db->select('*');",
+			 "		$this->db->from('blogs');",
+		     "		$this->db->join('comments', 'comments.id = blogs.id');",
+			 "		$query = $this->db->get();"
+		],
+		"description": "SELECT * FROM blogs JOIN comments ON comments.id = blogs.id"
 }
+
+
+
+
+
 }
